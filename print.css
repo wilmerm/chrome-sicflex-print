@@ -1,0 +1,14 @@
+
+
+body {
+    background-color: red !important;
+}
+table td {
+    background-color: red;
+}
+
+@media print {
+    body {
+        background-color: yellow !important;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <style>
+        body {
+          background-color: #ffffff;
+        }
+        button {
+          padding: 10px;
+          background-color: #006800;
+          border: 1px solid rgb(19, 61, 0);
+          color: white;
+          margin: 5px;
+          cursor: pointer;
+          transition-duration: 0.5s;
+          font-size: 16px;
+        }
+        button:hover {
+          background-color: #4c8600;
+          color: white;
+          padding: 15px;
+          box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.158);
+          font-size: 20px;
+        }
+        hr {
+          border: none;
+          border-top: 1px dashed gray;
+        }
+      </style>
+    </head>
+    <body>
+      <div style="padding: 10px; margin: 10px; text-align: center; width: 300px;">
+        <img src="/images/documento.svg" alt="" style="width: 128px;"><br><hr>
+        <button id="printPage">Imprimir</button>
+        <a href="https://blog.unolet.com/?from=sicflex_chrome_extention" target="_blank">Acerca de</a>
+        <hr>
+
+        <p>Imprima las facturas de '...sicflex.com' mediante este navegador, en el formato deseado.</p>
+        <p style="text-align: left;">
+          <details style="background-color: #e9e9ad; padding: 5px">
+            <summary><u>Algunas intrucciones de uso:</u> </summary>
+          <ol style="text-align: left;">
+            <li>Es necesario que se encuentre en el módulo <b>"Facturación a Clientes"</b>.</li>
+            <li>Debe tener la factura que desea imprimir abierta en esta pestaña.</li>
+            <li>Solo podrá re-imprimir si la factura ya ha sido impresa en la impresora fiscal.</li>
+            <li>La impresión mediante esta herramienta no implica ninguna modificación en los datos originales de la factura.</li>
+            <li>La configuración regional de Sicflex deberá estar en el formato de <b>punto</b> para la división decimal, por lo cual, en caso de ser contraria, se le pedirá que cambie la cofiguración a <b>República Dominicana</b> dando click en la bandera dominicana ubicada en la parte superior.</li>
+          </ol>
+          Si presenta algún problema, escribanos a <a href="mailto:unoletsoft@gmail.com?subject=Extención Chrome para impresión en Sicflex"><b>unoletsoft@gmail.com</b></a>
+        </details>
+        </p>
+        
+        
+      </div>
+      <a href="https://blog.unolet.com/?from=sicflex_chrome_extention" target="_blank">
+        <img src="/images/unolet.svg" alt="" style="width: 32px; position: fixed; z-index: 9999; top: 10px; left: 10px;">
+      </a>
+      <script src="popup.js"></script>
+    </body>
+  </html>

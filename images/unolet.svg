@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg896"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="logo.svg">
+  <title
+     id="title1469">UNOLET - LOGO</title>
+  <defs
+     id="defs890" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.0708799"
+     inkscape:cx="201.51117"
+     inkscape:cy="274.94761"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata893">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>UNOLET - LOGO</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-161.53332)">
+    <rect
+       style="opacity:1;fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1453"
+       width="136.13606"
+       height="68.185272"
+       x="-0.24707307"
+       y="229.30884" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.7815876px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="71.220741"
+       y="216.49207"
+       id="text1443"
+       transform="scale(0.95464109,1.0475141)"><tspan
+         sodipodi:role="line"
+         id="tspan1441"
+         x="70.160164"
+         y="216.49207"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70.95162201px;line-height:46.48809433px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:center;letter-spacing:-2.12115788px;text-anchor:middle;stroke-width:0.26458332"
+         rotate="0 0 0 0"
+         dy="0"
+         dx="0"><tspan
+           style="fill:#4d4d4d;stroke-width:0.26458332"
+           id="tspan1467">UN</tspan><tspan
+           style="fill:#ff0000;stroke-width:0.26458332"
+           id="tspan1465">O</tspan></tspan><tspan
+         sodipodi:role="line"
+         x="70.160164"
+         y="262.98013"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70.95162201px;line-height:46.48809433px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:center;letter-spacing:-2.12115788px;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332"
+         id="tspan1445"
+         rotate="0 0 0 0">LET</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1457"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion1459"><rect
+           id="rect1461"
+           width="28.014345"
+           height="82.175415"
+           x="170.88751"
+           y="336.44342" /></flowRegion><flowPara
+         id="flowPara1463"></flowPara></flowRoot>  </g>
+</svg>

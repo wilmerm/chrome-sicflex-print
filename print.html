@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>Factura Sicflex | By Wilmer Martínez</title>
+    <style>
+        body {
+            font-size: 16px;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+
+        #header {
+            width: 100%
+        }
+
+        #header th {
+            text-align: right;
+        }
+
+        #header-left {
+            width: 50%;
+            font-style: italic;
+            padding-top: 0px;
+        }
+
+        #header-right {
+            width: auto
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0px;
+            padding: 0px;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        #logo {
+            width: 128px
+        }
+
+        #items {
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        #items td {
+            border: 1px solid gray
+        }
+
+        #items th {
+            text-align: center;
+            border: 1px solid gray;
+            background-color: #eee;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <table id="header">
+            <tr>
+                <td id="header-left">
+                    <h1 id="empresa">UNOLET</h1>
+                    <div id="direccion">Dirección de la empresa.</div>
+                    <div id="rnc">RNC: 001-00000-1</div>
+                    <div id="telefono">Tel.: 809-000-0000</div>
+                </td>
+                <td id="header-right">
+                    <table>
+                        <tr>
+                            <th>Almacén: </th>
+                            <td id="almacen">Suc. Principal</td>
+                        </tr>
+                        <tr>
+                            <th>Número: </th>
+                            <td id="numero">000000000000</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha: </th>
+                            <td id="fecha">01-01-2020</td>
+                        </tr>
+                        <tr>
+                            <th>Vendedor: </th>
+                            <td id="vendedor">Juan Pérez</td>
+                        </tr>
+                        <tr>
+                            <th>Condición: </th>
+                            <td id="condicion">A Contado</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td id="header-left-2">
+                    <table>
+                        <tr>
+                            <th>Cliente: </th>
+                            <td id="cliente">Juana Pérez</td>
+                        </tr>
+                        <tr>
+                            <th>Contacto: </th>
+                            <td id="cliente_contacto">809-000-0001</td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="header-right-2">
+                    <table>
+                        <tr>
+                            <th>NCF: </th>
+                            <td id="ncf">B010000000001</td>
+                        </tr>
+                        <tr>
+                            <th>NIF: </th>
+                            <td id="nif">0123456789876543210</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <table id="items" style="width: 100%">
+            <thead>
+                <tr id="keys"></tr>
+            </thead>
+            <tbody id="values"></tbody>
+        </table>
+        <!-- Totales -->
+        <table style="width: 100%;">
+            <tr>
+                <td id="nota" style="width: 65%; font-style: italic; font-size: 14px; padding-right: 5px;"></td>
+                <td>
+                    <table style="text-align: right; width: 100%">
+                        <tr>
+                            <th>Subtotal: </th>
+                            <td id="subtotal"></td>
+                        </tr>
+                        <tr>
+                            <th>Descuento: </th>
+                            <td id="descuento"></td>
+                        </tr>
+                        <tr>
+                            <th>Itbis: </th>
+                            <td id="itbis"></td>
+                        </tr>
+                        <tr>
+                            <th>Total: </th>
+                            <td id="total" style="font-weight: bold; font-size: 18px;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer style="position: fixed; bottom: 10px; width: 100%;">
+        <table style="width: 100%;">
+            <tr>
+                <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td>
+                <td style="border: none; padding: 5px"></td>
+                <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td>
+                <td style="border: none; padding: 5px"></td>
+                <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td>
+            </tr>
+        </table>
+    </footer>
+</body>
+</html>
+
+

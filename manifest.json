@@ -1,0 +1,48 @@
+{
+    "name": "Imprimir Factura",
+    "version": "1.0",
+    "description": "Extención para imprimir facturas. blog.unolet.com. Wilmer Martínez (2020).",
+
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "https://*.sicflex.com/*"],
+
+    "content_scripts": [
+        {
+          "matches": ["https://*.sicflex.com/*"], 
+          "css": ["background.css"],
+          "js": ["print.js"]
+      }
+    ],
+
+    "web_accessible_resources": [
+        "background.css",
+        "print.html",
+        "print.css",
+        "images/empresa.png",
+        "images/documento.svg"
+    ],
+    
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/print16.png",
+            "32": "images/print32.png",
+            "48": "images/print48.png",
+            "128": "images/print128.png"
+          }
+    },
+
+    "icons": {
+        "16": "images/print16.png",
+        "32": "images/print32.png",
+        "48": "images/print48.png",
+        "128": "images/print128.png"
+    },
+
+
+    "manifest_version": 2
+}
