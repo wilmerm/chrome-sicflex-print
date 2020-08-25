@@ -3,7 +3,7 @@
     "version": "0.0.0.1",
     "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
 
-    "permissions": ["declarativeContent", "https://refricentrorubiera.sicflex.com/*"],
+    "permissions": ["declarativeContent", "storage", "https://refricentrorubiera.sicflex.com/*"],
 
     "content_scripts": [
         {
@@ -25,6 +25,8 @@
         "scripts": ["background.js"],
         "persistent": false
     },
+
+    "options_page": "options.html",
 
     "page_action": {
         "default_popup": "popup.html",

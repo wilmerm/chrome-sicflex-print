@@ -40,7 +40,7 @@ let empresa = {
     nombre: "REFRICENTRO RUBIERA SRL",
     direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
     rnc: "101-82473-5",
-    email: "info@rubiera.com.do",
+    email: "rubieratunti@gmail.com",
     web: "rubiera.com.do",
     logo: "http://rubiera.com.do/wp-content/uploads/2017/11/rubiera.png",
     almacenes: {
