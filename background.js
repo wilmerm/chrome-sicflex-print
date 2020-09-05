@@ -8,11 +8,16 @@
 chrome.runtime.onInstalled.addListener(function() {
 
   /*
-  chrome.storage.sync.set({empresa: '#3aa757'}, function() {
+  chrome.storage.sync.get(null, function(items) {
     //document.head.innerHTML = ""; // Cambiar a cualquir códio que se ejecuta al iniciar la extención.
+    var empresa = items;
+    chrome.storage.sync.set(empresa, function() {
 
+    });
+    
   });
   */
+  
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{

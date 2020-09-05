@@ -5,16 +5,16 @@ var empresa = {}
 
 
 
-printPage.onclick = function(element) {
+printPage.onclick = function(event) {
 
     chrome.storage.sync.get(null, function(data) {
       empresa = data;
     });
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.executeScript(
-        tabs[0].id, {code: "onPrint()"}
-      );
+      
+      chrome.tabs.executeScript(tabs[0].id, {code: "onPrint()"});
+
     });
   };
 
