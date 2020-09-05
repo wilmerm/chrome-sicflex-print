@@ -24,6 +24,8 @@ var almacen_04_direccion = document.getElementById("almacen_04_direccion");
 var almacen_04_email = document.getElementById("almacen_04_email");
 var almacen_04_phone = document.getElementById("almacen_04_phone");
 
+var alerta = document.getElementById("alert");
+
 var button_save = document.getElementById("button_save");
 var button_cancel = document.getElementById("button_cancel");
 
@@ -39,15 +41,15 @@ var empresa = {
   almacenes: {
       a_01: {
           nombre: "Suc. Tunti Cáceres",
-          direccion: "Calle Tunti Caceres #167, Villa juana",
+          direccion: "Calle Tunti Caceres #167, Villa Juana",
           telefono: "809-685-4545",
-          email: "rubieratunti@gmail.com",
+          email: "tuntirubiera@gmail.com",
       },
       a_02: {
           nombre: "Suc. 27 de Febrero",
           direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
           telefono: "809-537-4545",
-          email: "info@rubiera.com.do",
+          email: "rubiera27@gmail.com",
       },
       a_03: {
           nombre: "Suc. Santiago",
@@ -125,14 +127,19 @@ function updateEmpresa() {
 }
 
 button_save.addEventListener("click", function() {
-
   updateEmpresa();
-
   chrome.storage.sync.set(empresa, function() {
     console.log(empresa);
   });
+  alerta.style.display = "block";
+  window.location.href = "#alert";
 });
 
+
+
+button_cancel.addEventListener("click", function() {
+  window.close();
+});
 
 
 init(data=empresa);

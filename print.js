@@ -32,40 +32,10 @@ var nota;
 // los totales al final. Su representación está dada por controles ocultos
 // con los siguientes ids:
 // __locale_decimal_separator, __locale_grouping_separator
-var decimal_separator = "."; 
+var decimal_separator = ".";
 var grouping_separator = ",";
 
 
-let empresa = {
-    nombre: "REFRICENTRO RUBIERA SRL",
-    direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
-    rnc: "101-82473-5",
-    email: "rubieratunti@gmail.com",
-    web: "rubiera.com.do",
-    logo: "http://rubiera.com.do/wp-content/uploads/2017/11/rubiera.png",
-    almacenes: {
-        a_01: {
-            nombre: "Suc. Tunti Cáceres",
-            direccion: "Calle Tunti Caceres #167, Villa juana",
-            telefono: "809-685-4545"
-        },
-        a_02: {
-            nombre: "Suc. 27 de Febrero",
-            direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
-            telefono: "809-537-4545"
-        },
-        a_03: {
-            nombre: "Suc. Santiago",
-            direccion: "Av. 27 de Febrero No. 31, Santiago",
-            telefono: "809-583-2110"
-        },
-        a_04: {
-            nombre: "Suc. Bávaro",
-            direccion: "Km 7, Carretera Verón-Bávaro",
-            telefono: "809-468-1498"
-        }
-    }
-}
 
 
 function update() {
@@ -102,7 +72,49 @@ function update() {
 }
 
 
-var html = '<html><head><title>Factura Sicflex | By Wilmer Martínez</title><style>body {font-size: 16px;font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;}#header {width: 100%}#header th {text-align: right;}#header-left {width: 50%;padding-top: 0px;}#header-right {width: auto}h1 {font-size: 26px;margin: 0px;padding: 0px;font-style: normal;font-weight: bold;}#logo {width: 128px}#items {border-collapse: collapse;font-size: 14px;}#items td {border: 1px solid gray}#items th {text-align: center;border: 1px solid gray;background-color: #eee;}hr {border: none;border-top: 1px solid gray;}</style></head><body><div id="app" class="container-fluid"><table id="header"><tr><td id="header-left"><h1 id="empresa">UNOLET</h1><div id="direccion" style="font-style: italic;">Dirección de la empresa.</div><div id="rnc">RNC: 001-00000-1</div><div id="telefono">Tel.: 809-000-0000</div><div id="email">Email: info@unolet.com</div><div id="web">blog.unolet.com</div></td><td id="header-right"><table><tr><td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td></tr><tr><th>Almacén: </th><td id="almacen">Suc. Principal</td></tr><tr><th>Número: </th><td id="numero">000000000000</td></tr><tr><th>Fecha: </th><td id="fecha">01-01-2020</td></tr><tr><th>Vendedor: </th><td id="vendedor">Juan Pérez</td></tr><tr><th>Condición: </th><td id="condicion">A Contado</td></tr></table></td></tr><tr><td id="header-left-2"><table><tr><th>Cliente: </th><td id="cliente">Juana Pérez</td></tr><tr><th>Contacto: </th><td id="cliente_contacto">809-000-0001</td></tr></table></td><td id="header-right-2"><table><tr><th>NCF: </th><td id="ncf">B010000000001</td></tr><tr><th>NIF: </th><td id="nif">0123456789876543210</td></tr></table></td></tr></table><hr><table id="items" style="width: 100%"><thead><tr id="keys"></tr></thead><tbody id="values"></tbody></table><!-- Totales --><table style="width: 100%;"><tr><td id="nota" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td><td><table style="text-align: right; width: 100%"><tr><td id="subtotal"></td></tr><tr><td id="descuento"></td></tr><tr><td id="itbis"></td></tr><tr><td id="total" style="font-weight: bold; font-size: 18px;"></td></tr></table></td></tr></table></div><footer style="position: fixed; bottom: 10px; width: 100%;"><table style="width: 100%;"><tr><td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td><td style="border: none; padding: 5px"></td><td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td><td style="border: none; padding: 5px"></td><td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td></tr></table></footer></body></html>';
+
+// Datos predeterminados.
+// Este mismo objeto (tal cual) se encuentra también en 
+// options.js para administrar el almacenamiento del mismo.
+var empresa = {
+    nombre: "REFRICENTRO RUBIERA SRL",
+    direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
+    rnc: "101-82473-5",
+    email: "info@rubiera.com.do",
+    web: "rubiera.com.do",
+    logo: "http://rubiera.com.do/wp-content/uploads/2017/11/rubiera.png",
+    almacenes: {
+        a_01: {
+            nombre: "Suc. Tunti Cáceres",
+            direccion: "Calle Tunti Caceres #167, Villa juana",
+            telefono: "809-685-4545",
+            email: "tuntirubiera@gmail.com",
+        },
+        a_02: {
+            nombre: "Suc. 27 de Febrero",
+            direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
+            telefono: "809-537-4545",
+            email: "rubiera27@gmail.com",
+        },
+        a_03: {
+            nombre: "Suc. Santiago",
+            direccion: "Av. 27 de Febrero No. 31, Santiago",
+            telefono: "809-583-2110",
+            email: "rubierasantiago@gmail.com",
+        },
+        a_04: {
+            nombre: "Suc. Bávaro",
+            direccion: "Km 7, Carretera Verón-Bávaro",
+            telefono: "809-468-1498",
+            email: "rubierabavaro@gmail.com",
+        }
+    }
+  }
+
+
+
+var html = '<html><head>  <title>Factura Sicflex | By Wilmer Martínez</title>  <style>    body {      font-size: 16px;      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;      color: black;    }    #header {      width: 100%    }    #header th {      text-align: right;    }    #header-left {      width: 50%;      padding-top: 0px;    }    #header-right {      width: auto    }    h1 {      font-size: 26px;      margin: 0px;      padding: 0px;      font-style: normal;      font-weight: bold;    }    #logo {      width: 128px    }    #items {      border-collapse: collapse;      font-size: 14px;    }    #items td {      border: 1px solid gray    }    #items th {      text-align: center;      border: 1px solid gray;      background-color: #eee;    }    hr {      border: none;      border-top: 1px solid gray;    }  </style></head><body>  <div id="app" class="container-fluid">    <table id="header">      <tr>        <td id="header-left" style="font-weight: bold;">          <h1 id="empresa">UNOLET</h1>          <div id="direccion">Dirección de la empresa.</div>          <div id="rnc">RNC: 001-00000-1</div>          <div id="telefono">Tel.: 809-000-0000</div>          <div id="email">Email: info@unolet.com</div>          <div id="web">blog.unolet.com</div>        </td>        <td id="header-right">          <table>            <tr>              <td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td>            </tr>            <tr>              <th>Almacén: </th>              <td id="almacen">Suc. Principal</td>            </tr>            <tr>              <th>Número: </th>              <td id="numero">000000000000</td>            </tr>            <tr>              <th>Fecha: </th>              <td id="fecha">01-01-2020</td>            </tr>            <tr>              <th>Vendedor: </th>              <td id="vendedor">Juan Pérez</td>            </tr>            <tr>              <th>Condición: </th>              <td id="condicion">A Contado</td>            </tr>          </table>        </td>      </tr>      <tr>        <td id="header-left-2">          <table>            <tr>              <th>Cliente: </th>              <td id="cliente">Juana Pérez</td>            </tr>            <tr>              <th>Contacto: </th>              <td id="cliente_contacto">809-000-0001</td>            </tr>          </table>        </td>        <td id="header-right-2">          <table>            <tr>              <th>NCF: </th>              <td id="ncf">B010000000001</td>            </tr>            <tr>              <th>NIF: </th>              <td id="nif">0123456789876543210</td>            </tr>          </table>        </td>      </tr>    </table>    <hr>    <table id="items" style="width: 100%">      <thead>        <tr id="keys"></tr>      </thead>      <tbody id="values"></tbody>    </table>    <!-- Totales -->    <table style="width: 100%;">      <tr>        <td id="nota" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td>        <td>          <table style="text-align: right; width: 100%">            <tr>              <td id="subtotal"></td>            </tr>            <tr>              <td id="descuento"></td>            </tr>            <tr>              <td id="itbis"></td>            </tr>            <tr>              <td id="total" style="font-weight: bold; font-size: 18px;"></td>            </tr>          </table>        </td>      </tr>    </table>  </div>  <footer style="position: fixed; bottom: 10px; width: 100%;">    <table style="width: 100%;">      <tr>        <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td>        <td style="border: none; padding: 5px"></td>        <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td>        <td style="border: none; padding: 5px"></td>        <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td>      </tr>    </table>  </footer></body></html>';
+
 
 // Con este id base Sicflex identifica los encabezados de la tabla de movimientos.
 // Pero el texto se encuentra en un tag "a" dentro de muchos otros.
@@ -121,7 +133,11 @@ function get(element, method="value") {
 }
 
 
-function getAlmacen(element) {
+
+
+
+
+function getAlmacen(element, empresa) {
     try {
         id = element.value;
     } catch (error) {
@@ -141,7 +157,7 @@ function getAlmacen(element) {
         return empresa.almacenes.a_04;
     }
     return {};
-}   
+}
 
 
 function Float(value) {
@@ -149,7 +165,6 @@ function Float(value) {
         value.replace(/./g, "");
         value.replace(",", ".");
     } else {
-
         value = value.replace(/,/g, "");
     }
     return parseFloat(value);
@@ -166,6 +181,11 @@ function Int(value) {
     }
     return parseInt(value);
 }
+
+
+function intComma(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 
 
 function parseValue(value, typee) {
@@ -209,19 +229,16 @@ function setItems(doc) {
     let names = getItemsFields();
     let keys = doc.getElementById("keys");
     let values = doc.getElementById("values");
-    
+
     // totales.
-    let descuento = 0;
-    let itbis = 0;
-    let bruto = 0;
-    let neto = 0;
+    var bruto = 0;
 
     // Añadimos los nombres de columnas.
     for (i=0; i<names.length; i++) {
-        let e = names[i];
+        var e = names[i];
         let th = doc.createElement("th");
         th.innerText = e.prop.name;
-        th.style = e.prop.style;
+        th.style = "text-align: center";
         th.id = "item-" + e.index;
         keys.appendChild(th);
     }
@@ -242,24 +259,17 @@ function setItems(doc) {
         // Cada campo.
         for (a=0; a<names.length; a++) {
             let e = names[a];
-            let value = tds[e.index].innerText;
+            let value = tds[e.index].innerText.replace(/\n/g, "").replace("  ", " ").trim();;
             let newCell = doc.createElement("td");
 
-            value = parseValue(value, e.prop.typee);
-
-            // Totales.
-            let v = Float(value);
+            if (e.prop.prop == "cantOriginal") {
+                value = intComma(Float(parseValue(value, e.prop.typee)))
+            }
+            if (e.prop.prop == "precioOriginal") {
+                value = intComma(Float(parseValue(value, e.prop.typee)));
+            }
             if (e.prop.prop == "ventaBruto") {
-                bruto += v;
-            }
-            if (e.prop.prop == "ventaDescuento") {
-                descuento += v;
-            }
-            if (e.prop.prop == "ventaItbis") {
-                itbis += v;
-            }
-            if (e.prop.prop == "ventaNeto") {
-                neto += v;
+                bruto += Float(parseValue(value, e.prop.typee));
             }
 
             newCell.innerText = value;
@@ -278,16 +288,30 @@ function setItems(doc) {
     let rt2 = rowsTotal[2]; // Itbis.
     let rt3 = rowsTotal[3]; // Neto.
 
-    doc.getElementById("subtotal").innerText = "Subtotal " + bruto.toFixed(2);
+    let sb = rt0.cells[rt0.cells.length-1];
+
+
+    doc.getElementById("subtotal").innerText = "Subtotal " + sb.innerText.replace(/\n/g, "").replace("  ", " ").trim();
     doc.getElementById("descuento").innerText = rt1.innerText.replace(/\n/g, "").replace("  ", " ").trim();
     doc.getElementById("itbis").innerText = rt2.innerText.replace(/\n/g, "").replace("  ", " ").trim();
     doc.getElementById("total").innerText = rt3.innerText.replace(/\n/g, "").replace("  ", " ").trim();
 }
 
 
-function printPagina(intentos=0) {
+
+function onPrint() {
+    // Este métido se maneja de forma asincrona, por eso lo llamamos asi.
+    chrome.storage.sync.get(null, function(data) {
+        printPagina(0, data);
+    });
+}
+
+
+function printPagina(intentos=0, empresa) {
     // Extraemos los datos de la página.
     update();
+
+    almacen = getAlmacen(almacen_id, empresa);
 
     if (decimal_separator != ".") {
         let sino = confirm("La configuración regional de Sicflex no es la aducuada para el formato númerico utilizado en República Dominicana. Al hacer click en 'Aceptar' se cambiará la configuración regional ideal para República Dominicana, con los decimales separados por punto y no por coma. También podrá hacerlo usted mismo dando click a la banderita dominicana que aparece en la parte superior de la página.");
@@ -341,9 +365,9 @@ function printPagina(intentos=0) {
         //win.document.getElementById("logo").src = get(logo, "src");
         win.document.getElementById("empresa").innerText = empresa.nombre;
         win.document.getElementById("rnc").innerText = "RNC: " + empresa.rnc;
-        win.document.getElementById("direccion").innerText = getAlmacen(almacen_id).direccion;
-        win.document.getElementById("telefono").innerText = "Tel.: " + getAlmacen(almacen_id).telefono;
-        win.document.getElementById("email").innerText = "Email: " + empresa.email;
+        win.document.getElementById("direccion").innerText = almacen.direccion;
+        win.document.getElementById("telefono").innerText = "Tel.: " + almacen.telefono;
+        win.document.getElementById("email").innerText = "Email: " + almacen.email;
         win.document.getElementById("web").innerText = empresa.web;
         win.document.getElementById("titulo").innerText = "FACTURA A " + get(pedido, "select").toUpperCase(); 
         win.document.getElementById("almacen").innerText = get(almacen_name);

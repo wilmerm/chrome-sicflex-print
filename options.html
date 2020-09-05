@@ -5,6 +5,7 @@
       <style>
         body {
           padding: 20px;
+          padding-top: 0px;
         }
         div {
           padding: 10px;
@@ -31,12 +32,31 @@
           background-color: rgb(0, 105, 35);
           color: white;
         }
+        #alert {
+          padding: 10px;
+          background-color: rgb(115, 252, 195);
+          font-size: 18px;
+          border: 1px solid rgb(182, 182, 182);
+          display: none;
+        }
       </style>
     </head>
     <body>
       <div id="option">
-        <h1 style="color: rgb(0, 45, 112);">Configuración de la extensión</h1>
-        <hr>
+        <div style="float: left;">
+          <a href="https://blog.unolet.com/" target="_blank">
+            <img src="images/unolet.svg" alt="" style="width: 64px; height: 64px;">
+          </a>
+        </div>
+        <div style="float: left">
+          <h1 style="color: rgb(0, 45, 112); margin: 0px">Configuración de la extensión</h1>
+          <h4>Los datos que establezca aquí, aparecerán en el documento impreso.</h4>
+        </div>
+        <hr style="clear: left">
+        <div id="alert">
+          ¡Datos actualizados!
+          <button id="button_cancel" style="text-align: right;">Cerrar</button>
+        </div>
         <div>
           <h2>Datos de la empresa:</h2>
           <label for="empresa_name">Nombre de la empresa</label>
