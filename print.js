@@ -381,7 +381,17 @@ function printPagina(intentos=0, empresa) {
         win.document.getElementById("fecha").innerText = get(fecha);
         win.document.getElementById("vendedor").innerText = get(vendedor_name);
         win.document.getElementById("condicion").innerText = get(condicion, "select");
-        win.document.getElementById("cliente").innerText = "[" + get(cliente_id) + "] " + get(cliente_name);
+
+        // El nombre de cliente será el que se indique o el nombre guardado.
+        let cliente;
+        if (get(cliente_name2)) {
+            cliente = "[" + get(cliente_id) + "] " + get(cliente_name2);
+        } else {
+            cliente = "[" + get(cliente_id) + "] " + get(cliente_name);
+        }
+
+        win.document.getElementById("cliente").innerText = cliente;
+
         win.document.getElementById("cliente_contacto").innerText = get(cliente_contacto);
         win.document.getElementById("ncf").innerText = get(ncf);
         win.document.getElementById("nif").innerText = get(nif);
