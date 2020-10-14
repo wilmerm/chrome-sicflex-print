@@ -34,41 +34,92 @@ var nota;
 // __locale_decimal_separator, __locale_grouping_separator
 var decimal_separator = ".";
 var grouping_separator = ",";
+// Solo para devoluciones:
+var factura_afectada_fecha;
+var factura_afectada_numero;
+var factura_afectada_tipo;
 
 
 
 
-function update() {
+
+
+
+function update(tipo="factura") {
+    /*
+    Parameters:
+        tipo (string): 'factura', 'devolucion'.
+    */
     logo = document.getElementsByClassName("sic-header-org-logo")[0];
-    almacen_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__warehouse___id");
-    almacen_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__warehouse___description");
-    documento_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__document___id");
-    documento_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__document___description");
-    numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__numero");
-    estatus = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__estatus");
-    fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fecha");
-    fecha_vence = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fechaVence");
-    cliente_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___noCliente");
-    cliente_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___nombre");
-    cliente_contacto = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___contacto");
-    cliente_name2 = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__tarjetHabiente");
-    moneda = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__currencyDefinition___currencyCode");
-    tasa = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__currencyRate");
-    detalle1 = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__detalle1");
-    vendedor_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__salesperson___id");
-    vendedor_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__salesperson___name");
-    paga_itbis = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoice__pagaItbis")[0];
-    itbis_incluido = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoice__itbisIncluido")[0];
-    descuento = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__porcentajeDesc");
-    condicion = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__condicion___id");
-    pedido = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__creditCash");
-    pedido_numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__numeroPedido");
-    pedido_fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fechaPedido");
-    ncf = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fiscalDocument");
-    nif = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fiscalPrinterNumber");
-    nota = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__notas");
     decimal_separator = document.getElementById("__locale_decimal_separator").value; 
     grouping_separator = document.getElementById("__locale_grouping_separator").value;
+
+    if (tipo == "factura") {
+        almacen_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__warehouse___id");
+        almacen_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__warehouse___description");
+        documento_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__document___id");
+        documento_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__document___description");
+        numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__numero");
+        estatus = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__estatus");
+        fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fecha");
+        fecha_vence = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fechaVence");
+        cliente_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___noCliente");
+        cliente_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___nombre");
+        cliente_contacto = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__ccamc___contacto");
+        cliente_name2 = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__tarjetHabiente");
+        moneda = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__currencyDefinition___currencyCode");
+        tasa = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__currencyRate");
+        detalle1 = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__detalle1");
+        vendedor_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__salesperson___id");
+        vendedor_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__salesperson___name");
+        paga_itbis = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoice__pagaItbis")[0];
+        itbis_incluido = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoice__itbisIncluido")[0];
+        descuento = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__porcentajeDesc");
+        condicion = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__condicion___id");
+        pedido = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__creditCash");
+        pedido_numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__numeroPedido");
+        pedido_fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fechaPedido");
+        ncf = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fiscalDocument");
+        nif = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__fiscalPrinterNumber");
+        nota = document.getElementById("ox_jSicflexWebApp_InventoryInvoice__notas");
+        
+    } else if (tipo == "devolucion") {
+        almacen_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__warehouse___id");
+        almacen_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__warehouse___description");
+        documento_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__document___id");
+        documento_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__document___description");
+        numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__numero");
+        estatus = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__estatus");
+        fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__fecha");
+        fecha_vence = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__fechaVence");
+        cliente_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__ccamc___noCliente");
+        cliente_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__ccamc___nombre");
+        cliente_contacto = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__ccamc___contacto");
+        cliente_name2 = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__tarjetHabiente");
+        moneda = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__currencyDefinition___currencyCode");
+        tasa = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__currencyRate");
+        detalle1 = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__detalle1");
+        vendedor_id = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__salesperson___id");
+        vendedor_name = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__salesperson___name");
+        paga_itbis = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoiceReturn__pagaItbis")[0];
+        itbis_incluido = document.getElementsByName("ox_jSicflexWebApp_InventoryInvoiceReturn__itbisIncluido")[0];
+        descuento = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__porcentajeDesc");
+        condicion = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__condicion___id");
+        pedido = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__creditCash");
+        pedido_numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__numeroPedido");
+        pedido_fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__fechaPedido");
+        ncf = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__fiscalDocument");
+        nif = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__fiscalPrinterNumber");
+        nota = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__notas");
+        // Solo para devoluciones.
+        factura_afectada_tipo = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__cxcDocumento___id");
+        factura_afectada_numero = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__cxcNumero");
+        factura_afectada_fecha = document.getElementById("ox_jSicflexWebApp_InventoryInvoiceReturn__cxcFecha");
+    }
+
+    
+
+
 }
 
 
@@ -113,11 +164,14 @@ var empresa = {
 
 
 
-var html = '<html><head> <title>Factura Sicflex | By Wilmer Martínez</title> <style> body { font-size: 16px; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; color: black; } #header { width: 100% } #header th { text-align: right; } #header-left { width: 50%; padding-top: 0px; } #header-right { width: auto } h1 { font-size: 26px; margin: 0px; padding: 0px; font-style: normal; font-weight: bold; } #logo { width: 128px } #items { border-collapse: collapse; font-size: 14px; } #items td { border: 1px solid gray } #items th { text-align: center; border: 1px solid gray; background-color: #eee; } hr { border: none; border-top: 1px solid gray; } #mark { position: fixed; font-size: 5rem; font-weight: bold; opacity: 0.1; top: 45%; left: 10%; -webkit-transform: rotate(-45deg); -webkit-transform: rotate3d(20,41,10); } </style></head><body> <div id="mark"> REIMPRESIÓN </div> <div id="app" class="container-fluid"> <table id="header"> <tr> <td id="header-left" style="font-weight: bold;"> <h1 id="empresa">UNOLET</h1> <div id="direccion">Dirección de la empresa.</div> <div id="rnc">RNC: 001-00000-1</div> <div id="telefono">Tel.: 809-000-0000</div> <div id="email">Email: info@unolet.com</div> <div id="web">blog.unolet.com</div> </td> <td id="header-right"> <table> <tr> <td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td> </tr> <tr> <th>Almacén: </th> <td id="almacen">Suc. Principal</td> </tr> <tr> <th>Número: </th> <td id="numero">000000000000</td> </tr> <tr> <th>Fecha: </th> <td id="fecha">01-01-2020</td> </tr> <tr> <th>Vendedor: </th> <td id="vendedor">Juan Pérez</td> </tr> <tr> <th>Condición: </th> <td id="condicion">A Contado</td> </tr> </table> </td> </tr> <tr> <td id="header-left-2"> <table> <tr> <th>Cliente: </th> <td id="cliente">Juana Pérez</td> </tr> <tr> <th>Contacto: </th> <td id="cliente_contacto">809-000-0001</td> </tr> </table> </td> <td id="header-right-2"> <table> <tr> <th>NCF: </th> <td id="ncf">B010000000001</td> </tr> <tr> <th>NIF: </th> <td id="nif">0123456789876543210</td> </tr> </table> </td> </tr> </table> <hr> <table id="items" style="width: 100%"> <thead> <tr id="keys"></tr> </thead> <tbody id="values"></tbody> </table> <!-- Totales --> <table style="width: 100%;"> <tr> <td id="nota" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td> <td> <table style="text-align: right; width: 100%"> <tr> <td id="subtotal"></td> </tr> <tr> <td id="descuento"></td> </tr> <tr> <td id="itbis"></td> </tr> <tr> <td id="total" style="font-weight: bold; font-size: 18px;"></td> </tr> </table> </td> </tr> </table> </div> <footer style="position: fixed; bottom: 10px; width: 100%;"> <table style="width: 100%;"> <tr> <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td> </tr> </table> </footer></body></html>';
+var html = '<html><head> <title>Imprimir factura | blog.unolet.com</title> <style> body { font-size: 16px; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; color: black; } #header { width: 100% } #header th { text-align: right; } #header-left { width: 50%; padding-top: 0px; } #header-right { width: auto } h1 { font-size: 26px; margin: 0px; padding: 0px; font-style: normal; font-weight: bold; } #logo { width: 128px } #items { border-collapse: collapse; font-size: 14px; } #items td { border: 1px solid gray } #items th { text-align: center; border: 1px solid gray; background-color: #eee; } hr { border: none; border-top: 1px solid gray; } #mark { position: fixed; font-size: 5rem; font-weight: bold; opacity: 0.1; top: 45%; left: 10%; -webkit-transform: rotate(-45deg); -webkit-transform: rotate3d(20,41,10); } </style></head><body> <div id="mark"> REIMPRESIÓN </div> <div id="app" class="container-fluid"> <table id="header"> <tr> <td id="header-left" style="font-weight: bold;"> <h1 id="empresa">UNOLET</h1> <div id="direccion">Dirección de la empresa.</div> <div id="rnc">RNC: 001-00000-1</div> <div id="telefono">Tel.: 809-000-0000</div> <div id="email">Email: info@unolet.com</div> <div id="web">blog.unolet.com</div> </td> <td id="header-right"> <table> <tr> <td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td> </tr> <tr> <th>Almacén: </th> <td id="almacen">Suc. Principal</td> </tr> <tr> <th>Número: </th> <td id="numero" style="white-space: nowrap;">000000000000</td> </tr> <tr> <th>Fecha: </th> <td id="fecha">01-01-2020</td> </tr> <tr> <th>Vendedor: </th> <td id="vendedor">Juan Pérez</td> </tr> <tr> <th>Condición: </th> <td id="condicion">A Contado</td> </tr> </table> </td> </tr> <tr> <td id="header-left-2"> <table> <tr> <th>Cliente: </th> <td id="cliente">Juana Pérez</td> </tr> <tr> <th>Contacto: </th> <td id="cliente_contacto">809-000-0001</td> </tr> </table> </td> <td id="header-right-2"> <table> <tr> <th>NCF: </th> <td id="ncf">B010000000001</td> </tr> <tr> <th>NIF: </th> <td id="nif">0123456789876543210</td> </tr> </table> <table id="factura_afectada" style="display: none;"> <tr><th colspan="2" style="text-align: center;">Factura afectada</th></tr> <tr> <th>Número: </th> <td id="factura_afectada_numero" style="white-space: nowrap;">AAA-0000000000</td> </tr> <tr> <th>Fecha: </th> <td id="factura_afectada_fecha">01/01/1900</td> </tr> </table> </td> </tr> </table> <hr> <table id="items" style="width: 100%"> <thead> <tr id="keys"></tr> </thead> <tbody id="values"></tbody> </table> <!-- Totales --> <table style="width: 100%;"> <tr> <td id="nota" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td> <td> <table style="text-align: right; width: 100%"> <tr> <td id="subtotal"></td> </tr> <tr> <td id="descuento"></td> </tr> <tr> <td id="itbis"></td> </tr> <tr> <td id="total" style="font-weight: bold; font-size: 18px;"></td> </tr> <tr> <td id="total2" style="font-weight: bold; font-size: 18px;"></td> </tr> </table> </td> </tr> </table> </div> <footer style="position: fixed; bottom: 10px; width: 100%;"> <table style="width: 100%;"> <tr> <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td> </tr> </table> </footer></body></html>';
 
 // Con este id base Sicflex identifica los encabezados de la tabla de movimientos.
 // Pero el texto se encuentra en un tag "a" dentro de muchos otros.
+// Tenemos 2 ids, uno para facturas y otro para devoluciones, según en la página
+// donde se encuentre el usuario se usará uno u otro.
 var base_items_id = 'ox_jSicflexWebApp_InventoryInvoice__xava_collectionTab_imatrs_'; // agregamos el indice de la columna al final col0, col1
+var base_items_devolucion_id = 'ox_jSicflexWebApp_InventoryInvoiceReturn__xava_collectionTab_imatrs_'; // agregamos el indice de la columna al final col0, col1
 
 
 function get(element, method="value") {
@@ -217,14 +271,31 @@ function getItemsFields() {
 
     for (i=0; i<properties.length; i++) {
         var prop = properties[i];
+        console.log("data-property=", prop);
         var th = document.querySelectorAll("[data-property='" + prop.prop + "']")[0];
+
+        // Cuando es una devolución algunas columnas no estarán. O simplemente
+        // si la columna no está visible, no la mostramos.
+        if (th === undefined) {
+            continue;
+        }
         names.push({prop: prop, element: th, index: th.cellIndex})
     }
     return names;
 }
 
 
-function setItems(doc) {
+function setItems(doc, tipo="factura") {
+
+    let items_id = base_items_id;
+    
+    if (tipo == "devolucion") {
+        items_id = base_items_devolucion_id;
+    }
+
+    console.log("Obteniendo los items como tipo", tipo);
+    console.log("items_id:", items_id);
+
     let names = getItemsFields();
     let keys = doc.getElementById("keys");
     let values = doc.getElementById("values");
@@ -244,7 +315,7 @@ function setItems(doc) {
 
     // Añadimos los valores.
     for (i=0; i<100; i++) {
-        id = base_items_id + i;
+        id = items_id + i;
         let tr = document.getElementById(id);
 
         try {
@@ -285,15 +356,25 @@ function setItems(doc) {
     let rt0 = rowsTotal[0]; // Sumatoria de columnas. La venta en bruto está en su index.
     let rt1 = rowsTotal[1]; // Descuento.
     let rt2 = rowsTotal[2]; // Itbis.
-    let rt3 = rowsTotal[3]; // Neto.
+    let rt3 = rowsTotal[3]; // Neto. (Tip value en devolución.)
+    let rt4 = rowsTotal[4]; // (Neto en devolución.)
 
     let sb = rt0.cells[rt0.cells.length-1];
 
 
     doc.getElementById("subtotal").innerText = "Subtotal " + sb.innerText.replace(/\n/g, "").replace("  ", " ").trim();
-    doc.getElementById("descuento").innerText = rt1.innerText.replace(/\n/g, "").replace("  ", " ").trim();
+    if (tipo == "factura") {
+        doc.getElementById("descuento").innerText = rt1.innerText.replace(/\n/g, "").replace("  ", " ").trim();
+    }
     doc.getElementById("itbis").innerText = rt2.innerText.replace(/\n/g, "").replace("  ", " ").trim();
     doc.getElementById("total").innerText = rt3.innerText.replace(/\n/g, "").replace("  ", " ").trim();
+
+    try {
+        doc.getElementById("total").innerText = rt4.innerText.replace(/\n/g, "").replace("  ", " ").trim();
+    } catch (error) {
+        
+    }
+
 }
 
 
@@ -315,7 +396,23 @@ function onPrint() {
 
 function printPagina(intentos=0, empresa) {
     // Extraemos los datos de la página.
-    update();
+
+    // La página puede ser facturación o devolución.
+    // El path termina en InventoryInvoice para facturas y InventoryInvoiceReturn
+    // para devoluciones.
+    let url = window.location.href;
+    let url_array = url.split("/");
+    let url_last = url_array[url_array.length-1];
+    let tipo = "factura";
+
+    if (url_last.indexOf("InventoryInvoiceReturn") != -1) {
+        tipo = "devolucion";
+    }
+
+    console.log("URL", url);
+    console.log("Tipo: ", tipo)
+    
+    update(tipo=tipo);
 
     almacen = getAlmacen(almacen_id, empresa);
 
@@ -365,7 +462,7 @@ function printPagina(intentos=0, empresa) {
     }
 
 
-    try {
+    
         let win = window.open();
         win.document.write(html);
         //win.document.getElementById("logo").src = get(logo, "src");
@@ -375,12 +472,23 @@ function printPagina(intentos=0, empresa) {
         win.document.getElementById("telefono").innerText = "Tel.: " + almacen.telefono;
         win.document.getElementById("email").innerText = "Email: " + almacen.email;
         win.document.getElementById("web").innerText = empresa.web;
-        win.document.getElementById("titulo").innerText = "FACTURA A " + get(pedido, "select").toUpperCase(); 
         win.document.getElementById("almacen").innerText = get(almacen_name);
         win.document.getElementById("numero").innerText = get(documento_id) + "-" + get(numero);
         win.document.getElementById("fecha").innerText = get(fecha);
         win.document.getElementById("vendedor").innerText = get(vendedor_name);
         win.document.getElementById("condicion").innerText = get(condicion, "select");
+
+        // Solo para devoluciones.
+        if (tipo == "devolucion") {
+            win.document.getElementById("titulo").innerText = "DEVOLUCIÓN EN FACTURA";
+            win.document.getElementById("factura_afectada").style.display = "block";
+            win.document.getElementById("factura_afectada_numero").innerText = get(factura_afectada_tipo) + "-" + get(factura_afectada_numero);
+            win.document.getElementById("factura_afectada_fecha").innerText = get(factura_afectada_fecha);
+        // Solo para facturas.
+        } else {
+            win.document.getElementById("titulo").innerText = "FACTURA A " + get(pedido, "select").toUpperCase(); 
+        }
+
 
         // El nombre de cliente será el que se indique o el nombre guardado.
         let cliente;
@@ -396,12 +504,10 @@ function printPagina(intentos=0, empresa) {
         win.document.getElementById("ncf").innerText = get(ncf);
         win.document.getElementById("nif").innerText = get(nif);
         win.document.getElementById("nota").innerText = get(nota);
-        setItems(win.document);
+        setItems(win.document, tipo=tipo);
         win.document.close();
         win.print();
         win.close();
-    } catch (error) {
-        alert("No fue posible extraer los datos de la factura. " + error);
-    }
+
 }
 

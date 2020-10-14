@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Factura Sicflex | By Wilmer Martínez</title>
+    <title>Imprimir factura | blog.unolet.com</title>
     <style>
         body {
             font-size: 16px;
@@ -94,7 +94,7 @@
                         </tr>
                         <tr>
                             <th>Número: </th>
-                            <td id="numero">000000000000</td>
+                            <td id="numero" style="white-space: nowrap;">000000000000</td>
                         </tr>
                         <tr>
                             <th>Fecha: </th>
@@ -135,6 +135,17 @@
                             <td id="nif">0123456789876543210</td>
                         </tr>
                     </table>
+                    <table id="factura_afectada" style="display: none;">
+                        <tr><th colspan="2" style="text-align: center;">Factura afectada</th></tr>
+                        <tr>
+                            <th>Número: </th>
+                            <td id="factura_afectada_numero" style="white-space: nowrap;">AAA-0000000000</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha: </th>
+                            <td id="factura_afectada_fecha">01/01/1900</td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
@@ -162,6 +173,9 @@
                         </tr>
                         <tr>
                             <td id="total" style="font-weight: bold; font-size: 18px;"></td>
+                        </tr>
+                        <tr>
+                            <td id="total2" style="font-weight: bold; font-size: 18px;"></td>
                         </tr>
                     </table>
                 </td>
