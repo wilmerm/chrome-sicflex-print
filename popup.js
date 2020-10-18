@@ -3,8 +3,6 @@ let printPage = document.getElementById("printPage");
 var empresa = {}
 
 
-
-
 printPage.onclick = function(event) {
 
     chrome.storage.sync.get(null, function(data) {

@@ -1,5 +1,16 @@
 
-body {
-    background: #fff !important;
+
+.btn {
+    padding: 10px;
+    background: #13a0004b;
+    border: 1px solid green;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 5px 5px 5px 0px #00000055;
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 
+.btn:hover {
+    background: green;
+}

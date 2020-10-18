@@ -1,6 +1,6 @@
 {
     "name": "Imprimir Factura",
-    "version": "2.0",
+    "version": "3.0",
     "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
     "author": "UNOLET (Wilmer Martínez)",
 
@@ -10,7 +10,7 @@
         {
           "matches": ["https://refricentrorubiera.sicflex.com/*"], 
           "css": ["background.css"],
-          "js": ["print.js"]
+          "js": ["content.js"]
       }
     ],
 
@@ -18,8 +18,7 @@
         "background.css",
         "print.html",
         "print.css",
-        "images/empresa.png",
-        "images/documento.svg"
+        "images/*"
     ],
 
     "background": {
