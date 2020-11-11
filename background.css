@@ -2,15 +2,57 @@
 
 .btn {
     padding: 10px;
-    background: #13a0004b;
-    border: 1px solid green;
-    border-radius: 15px;
+    background: #454545;
+    border: 1px solid #303030;
+    border-radius: 25px;
     color: white;
-    box-shadow: 5px 5px 5px 0px #00000055;
+    box-shadow: -4px 4px 4px 0px #3a3a3a88;
     transition-duration: 0.5s;
     cursor: pointer;
+    position: fixed; bottom: 10px; right: 5px;
+    z-index: 9999999;
+}
+.btn img {
+    width: 24px;
+    height: 24px;
 }
 
 .btn:hover {
-    background: green;
+    background: #b81c1c;
+    border: 2px solid #a31616;
+    border-radius: 30px;
+    padding: 15px;
+    box-shadow: -7px 7px 6px 0px #3a3a3a88;
+}
+
+.btn:hover > img {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-text {
+    padding: 0px;
+    position: fixed; bottom: 15px; right: -240px;
+    z-index: 999999;
+    background-color: #b81c1c;
+    border: 1px solid #961616;
+    border-radius: 5px;
+    color: white;
+    transition-duration: 0.5s;
+    box-shadow: -3px 3px 2px 0px #45454580;
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.btn:hover + .btn-text {
+    position: fixed; bottom: 15px; right: 50px;
+    background-color: #b81c1c;
+}
+
+
+
+@media print {
+    .btn, .btn-img, .btn img, .btn-text {
+        display: none;
+    }
 }
