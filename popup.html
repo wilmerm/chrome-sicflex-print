@@ -6,23 +6,30 @@
         body {
           background-color: #ffffff;
         }
-        button {
-          padding: 20px;
-          background-color: #006800;
-          border: 1px solid gray;
+        .btn {
+          padding: 15px;
+          background-color: #b81c1c;
+          border: 1px solid #a31616;
           border-radius: 7px;
           color: white;
-          margin: 7px;
+          margin: 2px;
           cursor: pointer;
           transition-duration: 0.5s;
           font-size: 16px;
+          text-decoration: none;
+          white-space: nowrap;
         }
-        button:hover {
-          background-color: #4c8600;
+        .btn:hover {
+          background-color: #e61616;
+          border: #ca1b1b;
           color: white;
           padding: 20px;
           box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.158);
           font-size: 20px;
+        }
+        .btn-secondary {
+          background-color: #454545;
+          border-color: #303030;
         }
         hr {
           border: none;
@@ -32,9 +39,16 @@
     </head>
     <body>
       <div style="padding: 10px; margin: 10px; text-align: center; width: 400px;">
+        <webview src="http://demo.unolet.com/u" width="256" height="256"></webview>
+        <!-- 
+          <a href="https://blog.unolet.com" target="_blank">
+            <img src="http://demo.unolet.com/static/img/ad/ad-1.gif" alt="Promo" style="width: 100%; height: auto">
+          </a>
+         -->
         <br><br>
-        <button id="printPage">Imprimir</button>
-        <a href="https://blog.unolet.com/p/herramientas.html?from=sicflex_chrome_extention" target="_blank">Acerca de</a>
+        <button class="btn" id="printPage">Imprimir</button>
+        <a class="btn btn-secondary" href="https://blog.unolet.com/p/herramientas.html" target="_blank">Más herramientas</a>
+        <a class="btn btn-secondary" href=""><img src="/images/gift-box24.png" alt=""></a>
         <hr>
 
         <p>Imprima las facturas de '...sicflex.com' mediante este navegador, en el formato deseado.</p>

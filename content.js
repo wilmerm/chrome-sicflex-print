@@ -570,7 +570,7 @@ if (pathname.indexOf("inventoryinvoice") != -1) {
     img.className = "btn-img";
 
     let span = document.createElement("span");
-    span.innerText = "Imprimir con la extesión Unolet.";
+    span.innerHTML = "Imprimir con la extensión <b>Unolet</b>.";
     span.className = "btn-text";
     
     let btn = document.createElement("a");
