@@ -436,7 +436,7 @@ function printPagina(intentos=0, empresa) {
     almacen = getAlmacen(almacen_id, empresa);
 
     if (decimal_separator != ".") {
-        let sino = confirm("La configuración regional de Sicflex no es la aducuada para el formato númerico utilizado en República Dominicana. Al hacer click en 'Aceptar' se cambiará la configuración regional ideal para República Dominicana, con los decimales separados por punto y no por coma. También podrá hacerlo usted mismo dando click a la banderita dominicana que aparece en la parte superior de la página.");
+        let sino = confirm("La configuración regional de Sicflex no es la aducuada para el formato numérico utilizado en República Dominicana. Al hacer click en 'Aceptar' se cambiará la configuración regional ideal para República Dominicana, con los decimales separados por punto y no por coma. También podrá hacerlo usted mismo dando click a la banderita dominicana que aparece en la parte superior de la página.");
         if (sino == true) {
             // Este código es propio del sitio donde se ejecutará esta extensión.Al igual que otros más 'openxava'.
             location.href = "javascript:openxava.executeAction('jSicflexWebApp', 'InventoryInvoice', '', false, 'UserLocales.esDo')";
