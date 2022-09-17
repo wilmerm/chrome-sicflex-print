@@ -10,8 +10,13 @@ printPage.onclick = function(event) {
     });
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      
-      chrome.tabs.executeScript(tabs[0].id, {code: "onPrint()"});
+
+      //chrome.scripting.executeScript(tabs[0].id, { code: "onPrint()" });
+      chrome.scripting.executeScript({
+        target: { tabId: tabs.id },
+        func: onPrint,
+        args: [],
+      });
 
     });
   };

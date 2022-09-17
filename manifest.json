@@ -1,53 +1,56 @@
 {
-    "name": "Imprimir Factura",
-    "version": "3.2",
-    "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
-    "author": "UNOLET (Wilmer Martinez)",
-
-    "permissions": ["declarativeContent", "storage", "https://refricentrorubiera.sicflex.com/*", "https://demo.unolet.com/"],
-
-    "content_scripts": [
-        {
-          "matches": ["https://refricentrorubiera.sicflex.com/*"], 
-          "css": ["background.css"],
-          "js": ["content.js"]
-      }
-    ],
-
-    "web_accessible_resources": [
-        "background.css",
-        "print.html",
-        "print.css",
-        "images/*"
-    ],
-
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-
-    "options_ui": {
-        "page": "options.html",
-        "open_in_tab": true
-    },
-
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "images/print16.png",
-            "32": "images/print32.png",
-            "48": "images/print48.png",
-            "128": "images/print128.png"
-          }
-    },
-
-    "icons": {
-        "16": "images/print16.png",
-        "32": "images/print32.png",
-        "48": "images/print48.png",
-        "128": "images/print128.png"
-    },
-
-
-    "manifest_version": 2
+  "manifest_version": 3,
+  "name": "Imprimir Factura",
+  "version": "3.3",
+  "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
+  "author": "UNOLET (Wilmer Martinez)",
+  "permissions": [
+    "declarativeContent",
+    "storage",
+    "scripting",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [ "https://*.sicflex.com/*", "https://demo.unolet.com/*", "https://www.wilmermartinez.dev/*" ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://refricentrorubiera.sicflex.com/*"
+      ],
+      "css": [
+        "background.css"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "background.css", "print.html", "print.css", "images/*" ],
+      "matches": [ "https://*.sicflex.com/*", "https://demo.unolet.com/*", "https://www.wilmermartinez.dev/*" ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/print16.png",
+      "32": "images/print32.png",
+      "48": "images/print48.png",
+      "128": "images/print128.png"
+    }
+  },
+  "icons": {
+    "16": "images/print16.png",
+    "32": "images/print32.png",
+    "48": "images/print48.png",
+    "128": "images/print128.png"
+  }
 }
