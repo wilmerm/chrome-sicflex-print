@@ -138,6 +138,7 @@ var empresa = {
     email: "info@rubiera.com.do",
     web: "rubiera.com.do",
     logo: "http://rubiera.com.do/wp-content/uploads/2017/11/rubiera.png",
+    print_note: "No se aceptan devoluciones después de 30 días. \nNo se aceptan devoluciones en piezas electrónicas.",
     almacenes: {
         a_01: {
             nombre: "Suc. Tunti Cáceres",
@@ -168,7 +169,7 @@ var empresa = {
 
 
 
-var html = '<!DOCTYPE html><html lang="es"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Imprimir factura | www.unolet.com</title> <style> body { font-size: 16px; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; color: black; } #header { width: 100% } #header th { text-align: right; } #header-left { width: 50%; padding-top: 0px; } #header-right { width: auto } h1 { font-size: 26px; margin: 0px; padding: 0px; font-style: normal; font-weight: bold; } #logo { width: 128px } #items { border-collapse: collapse; font-size: 14px; } #items td { border: 1px solid gray } #items th { text-align: center; border: 1px solid gray; background-color: #eee; } hr { border: none; border-top: 1px solid gray; } #mark { position: fixed; font-size: 5rem; font-weight: bold; opacity: 0.1; top: 45%; left: 10%; -webkit-transform: rotate(-45deg); -webkit-transform: rotate3d(20,41,10); } .btn, .btn-img, .btn img { display: none; } </style></head><body> <div id="mark"> REIMPRESIÓN </div> <div id="app" class="container-fluid"> <table id="header"> <tr> <td id="header-left" style="font-weight: bold;">  <h1 id="empresa">UNOLET</h1>  <div id="direccion">Dirección de la empresa.</div>  <div id="rnc">RNC: 001-00000-1</div>  <div id="telefono">Tel.: 809-000-0000</div>  <div id="email">Email: info@unolet.com</div>  <div id="web">blog.unolet.com</div> </td> <td id="header-right">  <table>  <tr>  <td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td>  </tr>  <tr>  <th>Almacén: </th>  <td id="almacen">Suc. Principal</td>  </tr>  <tr>  <th>Número: </th>  <td id="numero" style="white-space: nowrap;">000000000000</td>  </tr>  <tr>  <th>Fecha: </th>  <td id="fecha">01-01-2020</td>  </tr>  <tr>  <th>Vendedor: </th>  <td id="vendedor">Juan Pérez</td>  </tr>  <tr>  <th>Condición: </th>  <td id="condicion">A Contado</td>  </tr>  </table> </td> </tr> <tr> <td id="header-left-2">  <table>  <tr>  <th>Cliente: </th>  <td id="cliente">Juana Pérez</td>  </tr>  <tr>  <th>Contacto: </th>  <td id="cliente_contacto">809-000-0001</td>  </tr>  </table> </td> <td id="header-right-2">  <table>  <tr>  <th>NCF: </th>  <td id="ncf">B010000000001</td>  </tr>  <tr>  <th>NIF: </th>  <td id="nif">0123456789876543210</td>  </tr>  </table>  <table id="factura_afectada" style="display: none;">  <tr><th colspan="2" style="text-align: center;">Factura afectada</th></tr>  <tr>  <th>Número: </th>  <td id="factura_afectada_numero" style="white-space: nowrap;">AAA-0000000000</td>  </tr>  <tr>  <th>Fecha: </th>  <td id="factura_afectada_fecha">01/01/1900</td>  </tr>  </table> </td> </tr> </table> <hr> <table id="items" style="width: 100%"> <thead> <tr id="keys"></tr> </thead> <tbody id="values"></tbody> </table> <!-- Totales --> <table style="width: 100%;"> <tr> <td id="nota" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td> <td>  <table style="text-align: right; width: 100%">  <tr>  <td id="subtotal"></td>  </tr>  <tr>  <td id="descuento"></td>  </tr>  <tr>  <td id="itbis"></td>  </tr>  <tr>  <td id="total" style="font-weight: bold; font-size: 18px;"></td>  </tr>  <tr>  <td id="total2" style="font-weight: bold; font-size: 18px;"></td>  </tr>  </table> </td> </tr> </table> </div> <footer style="position: fixed; bottom: 10px; width: 100%;"> <table style="width: 100%;"> <tr> <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td> </tr> </table> </footer></body></html>';
+var html = '<!DOCTYPE html><html lang="es"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>REFRICENTRO RUBIERA SRL</title> <style> body { font-size: 16px; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; color: black; } #header { width: 100% } #header th { text-align: right; } #header-left { width: 50%; padding-top: 0px; } #header-right { width: auto } h1 { font-size: 26px; margin: 0px; padding: 0px; font-style: normal; font-weight: bold; } #logo { width: 128px } #items { border-collapse: collapse; font-size: 14px; } #items td { border: 1px solid gray } #items th { text-align: center; border: 1px solid gray; background-color: #eee; } hr { border: none; border-top: 1px solid gray; } #mark { position: fixed; font-size: 5rem; font-weight: bold; opacity: 0.1; top: 45%; left: 10%; -webkit-transform: rotate(-45deg); -webkit-transform: rotate3d(20,41,10); } .btn, .btn-img, .btn img { display: none; } </style></head><body> <div id="mark"> REIMPRESIÓN </div> <div id="app" class="container-fluid"> <table id="header"> <tr> <td id="header-left" style="font-weight: bold;">  <h1 id="empresa">UNOLET</h1>  <div id="direccion">Dirección de la empresa.</div>  <div id="rnc">RNC: 001-00000-1</div>  <div id="telefono">Tel.: 809-000-0000</div>  <div id="email">Email: info@unolet.com</div>  <div id="web">blog.unolet.com</div> </td> <td id="header-right">  <table>  <tr>  <td colspan="2" id="titulo" style="font-size: 20px;">FACTURA A CONTADO</td>  </tr>  <tr>  <th>Almacén: </th>  <td id="almacen">Suc. Principal</td>  </tr>  <tr>  <th>Número: </th>  <td id="numero" style="white-space: nowrap;">000000000000</td>  </tr>  <tr>  <th>Fecha: </th>  <td id="fecha">01-01-2020</td>  </tr>  <tr>  <th>Vendedor: </th>  <td id="vendedor">Juan Pérez</td>  </tr>  <tr>  <th>Condición: </th>  <td id="condicion">A Contado</td>  </tr>  </table> </td> </tr> <tr> <td id="header-left-2">  <table>  <tr>  <th>Cliente: </th>  <td id="cliente">Juana Pérez</td>  </tr>  <tr>  <th>Contacto: </th>  <td id="cliente_contacto">809-000-0001</td>  </tr>  </table> </td> <td id="header-right-2">  <table>  <tr>  <th>NCF: </th>  <td id="ncf">B010000000001</td>  </tr>  <tr>  <th>NIF: </th>  <td id="nif">0123456789876543210</td>  </tr>  </table>  <table id="factura_afectada" style="display: none;">  <tr><th colspan="2" style="text-align: center;">Factura afectada</th></tr>  <tr>  <th>Número: </th>  <td id="factura_afectada_numero" style="white-space: nowrap;">AAA-0000000000</td>  </tr>  <tr>  <th>Fecha: </th>  <td id="factura_afectada_fecha">01/01/1900</td>  </tr>  </table> </td> </tr> </table> <table id="items" style="width: 100%"> <thead> <tr id="keys"></tr> </thead> <tbody id="values"></tbody> </table> <!-- Totales --> <table style="width: 100%;"> <tr> <td id="print_note" style="width: 55%; font-style: italic; font-size: 14px; padding-right: 5px;"></td> <td>  <table style="text-align: right; width: 100%">  <tr>  <td id="subtotal"></td>  </tr>  <tr>  <td id="descuento"></td>  </tr>  <tr>  <td id="itbis"></td>  </tr>  <tr>  <td id="total" style="font-weight: bold; font-size: 18px;"></td>  </tr>  <tr>  <td id="total2" style="font-weight: bold; font-size: 18px;"></td>  </tr>  </table> </td> </tr> </table> </div> <footer style="position: fixed; bottom: 10px; width: 100%;"> <table style="width: 100%;"> <tr> <td style="border: none; border-top: 1px solid black; text-align: center;">Revisado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Despachado por</td> <td style="border: none; padding: 5px"></td> <td style="border: none; border-top: 1px solid black; text-align: center;">Recibido por</td> </tr> </table> </footer></body></html>';
 
 // Con este id base Sicflex identifica los encabezados de la tabla de movimientos.
 // Pero el texto se encuentra en un tag "a" dentro de muchos otros.
@@ -280,21 +281,17 @@ function getItemsFields() {
         {prop: "ventaItbis", name: "Itbis", style: "text-align: right", typee: "decimal", sumar: true},
         {prop: "ventaBruto", name: "Total", style: "text-align: right", typee: "decimal", sumar: true}
     ]
-
-    var names = [];
-
-    for (i=0; i<properties.length; i++) {
-        let prop = properties[i];
+    const names = [];
+    properties.forEach(prop => {
         console.log("data-property=", prop);
         let th = document.querySelectorAll("[data-property='" + prop.prop + "']")[0];
-
         // Cuando es una devolución algunas columnas no estarán. O simplemente
         // si la columna no está visible, no la mostramos.
-        if (th === undefined) {
-            continue;
+        if (th != undefined) {
+            names.push({prop: prop, element: th, index: th.cellIndex})
         }
-        names.push({prop: prop, element: th, index: th.cellIndex})
-    }
+    });
+
     return names;
 }
 
@@ -471,13 +468,16 @@ function printPagina(intentos=0, empresa) {
     // Es obligatorio que la factura ya se haya impreso en la impresora fiscal,
     // antes de reeimprimirla por aqui.
     if (!get(nif)) {
-        
-        let sino = confirm("Antes de reeimprimir una factura en este formato, dicha factura debió antes ser impresa por la impresora fiscal \n\n¿Desea imprimir ahora por la impresora fiscal?");
-        if (sino == true) {
-            // Este código es propio del sitio donde se ejecutará esta extensión.Al igual que otros más 'openxava'.
-            location.href = "javascript:openxava.executeAction('jSicflexWebApp', 'InventoryInvoice', '', false, 'InventoryInterfacedController.generateDetailPdf')";
-        } 
-        return;
+        if (location.hostname == "demo.sicflex.com") {
+            // "Se permitirá imprimir a modo de debug."
+        } else {
+            let sino = confirm("Antes de reeimprimir una factura en este formato, dicha factura debió antes ser impresa por la impresora fiscal \n\n¿Desea imprimir ahora por la impresora fiscal?");
+            if (sino == true) {
+                // Este código es propio del sitio donde se ejecutará esta extensión.Al igual que otros más 'openxava'.
+                location.href = "javascript:openxava.executeAction('jSicflexWebApp', 'InventoryInvoice', '', false, 'InventoryInterfacedController.generateDetailPdf')";
+            } 
+            return;
+        }
     }
 
     console.log("Creando ventana de impresión...");
@@ -487,6 +487,7 @@ function printPagina(intentos=0, empresa) {
     //win.document.getElementById("logo").src = get(logo, "src");
     win.document.getElementById("empresa").innerText = empresa.nombre;
     win.document.getElementById("rnc").innerText = "RNC: " + empresa.rnc;
+    win.document.getElementById("print_note").innerText = empresa.print_note;
     win.document.getElementById("direccion").innerText = almacen.direccion;
     win.document.getElementById("telefono").innerText = "Tel.: " + almacen.telefono;
     win.document.getElementById("email").innerText = "Email: " + almacen.email;
@@ -521,18 +522,16 @@ function printPagina(intentos=0, empresa) {
     }
 
     win.document.getElementById("cliente").innerText = cliente;
-
     win.document.getElementById("cliente_contacto").innerText = get(cliente_contacto);
     win.document.getElementById("ncf").innerText = get(ncf);
     win.document.getElementById("nif").innerText = get(nif);
-    win.document.getElementById("nota").innerText = get(nota);
+    win.document.getElementById("print_note").innerText = `${empresa.print_note} \n${get(nota)}`
 
     console.log("Creando ventana de impresión | setItems()...");
     setItems(win.document, tipo=tipo);
 
     console.log("Creando ventana de impresión | cerrando documento de la ventana...");
     win.document.close();
-    
 
     setTimeout(function(){
         console.log("Creando ventana de impresión | imprimiendo documento de la ventana...");
@@ -569,9 +568,9 @@ if (pathname.indexOf("inventoryinvoice") != -1) {
     img.src = chrome.runtime.getURL("images/print128.png");
     img.className = "btn-img";
 
-    let span = document.createElement("span");
-    span.innerHTML = "Imprimir con la extensión <b>Unolet</b>.";
-    span.className = "btn-text";
+    // let span = document.createElement("span");
+    // span.innerHTML = "Imprimir con la extensión <b>Unolet</b>.";
+    // span.className = "btn-text";
     
     let btn = document.createElement("a");
     //btn.title = "Imprimir con la extensión.";
@@ -584,7 +583,7 @@ if (pathname.indexOf("inventoryinvoice") != -1) {
     let body = document.getElementsByTagName("body")[0];
     let div = document.createElement("div");
     div.appendChild(btn);
-    div.appendChild(span);
+    //div.appendChild(span);
     body.appendChild(div);
 
     //console.log("Botón imprimir creado.");

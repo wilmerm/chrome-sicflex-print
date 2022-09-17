@@ -3,6 +3,7 @@
 var empresa_name = document.getElementById("empresa_name");
 var empresa_rnc = document.getElementById("empresa_rnc");
 var empresa_email = document.getElementById("empresa_email");
+var empresa_print_note = document.getElementById("empresa_print_note");
 
 var almacen_01_name = document.getElementById("almacen_01_name");
 var almacen_01_direccion = document.getElementById("almacen_01_direccion");
@@ -38,6 +39,7 @@ var empresa = {
   email: "info@rubiera.com.do",
   web: "rubiera.com.do",
   logo: "http://rubiera.com.do/wp-content/uploads/2017/11/rubiera.png",
+  print_note: "No se aceptan devoluciones después de 30 días. \nNo se aceptan devoluciones en piezas electrónicas.",
   almacenes: {
       a_01: {
           nombre: "Suc. Tunti Cáceres",
@@ -73,6 +75,7 @@ function init(data) {
     empresa_name.value = items.nombre;
     empresa_rnc.value = items.rnc;
     empresa_email.value = items.email;
+    empresa_print_note.value = items.print_note
 
     almacen_01_name.value = items.almacenes.a_01.nombre;
     almacen_01_direccion.value = items.almacenes.a_01.direccion;
@@ -102,6 +105,7 @@ function updateEmpresa() {
   empresa.nombre = empresa_name.value;
   empresa.rnc = empresa_rnc.value;
   empresa.email = empresa_email.value;
+  empresa.print_note = empresa_print_note.value;
 
   empresa.almacenes.a_01.nombre = almacen_01_name.value;
   empresa.almacenes.a_01.direccion = almacen_01_direccion.value;
