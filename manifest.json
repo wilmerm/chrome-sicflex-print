@@ -4,11 +4,11 @@
     "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
     "author": "UNOLET (Wilmer Martinez)",
 
-    "permissions": ["declarativeContent", "storage", "https://refricentrorubiera.sicflex.com/*", "https://demo.unolet.com/"],
+    "permissions": ["declarativeContent", "storage", "https://*.sicflex.com/*", "https://demo.unolet.com/"],
 
     "content_scripts": [
         {
-          "matches": ["https://refricentrorubiera.sicflex.com/*"], 
+          "matches": ["https://*.sicflex.com/*"], 
           "css": ["background.css"],
           "js": ["content.js"]
       }
