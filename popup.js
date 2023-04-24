@@ -2,7 +2,6 @@
 let printPage = document.getElementById("printPage");
 var empresa = {}
 
-
 printPage.onclick = function(event) {
 
     chrome.storage.sync.get(null, function(data) {
@@ -10,7 +9,7 @@ printPage.onclick = function(event) {
     });
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      
+
       chrome.tabs.executeScript(tabs[0].id, {code: "onPrint()"});
 
     });

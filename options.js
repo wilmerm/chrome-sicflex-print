@@ -3,6 +3,7 @@
 var empresa_name = document.getElementById("empresa_name");
 var empresa_rnc = document.getElementById("empresa_rnc");
 var empresa_email = document.getElementById("empresa_email");
+var empresa_web = document.getElementById("empresa_web");
 var empresa_print_note = document.getElementById("empresa_print_note");
 
 var almacen_01_name = document.getElementById("almacen_01_name");
@@ -27,8 +28,9 @@ var almacen_04_phone = document.getElementById("almacen_04_phone");
 
 var alerta = document.getElementById("alert");
 
-var button_save = document.getElementById("button_save");
-var button_cancel = document.getElementById("button_cancel");
+const button_save = document.getElementById("button_save");
+const button_close = document.getElementById("button_close");
+const button_cancel = document.getElementById("button_cancel");
 
 
 // Datos predeterminados.
@@ -75,6 +77,7 @@ function init(data) {
     empresa_name.value = items.nombre;
     empresa_rnc.value = items.rnc;
     empresa_email.value = items.email;
+    empresa_web.value = items.web;
     empresa_print_note.value = items.print_note
 
     almacen_01_name.value = items.almacenes.a_01.nombre;
@@ -105,6 +108,7 @@ function updateEmpresa() {
   empresa.nombre = empresa_name.value;
   empresa.rnc = empresa_rnc.value;
   empresa.email = empresa_email.value;
+  empresa.web = empresa_web.value;
   empresa.print_note = empresa_print_note.value;
 
   empresa.almacenes.a_01.nombre = almacen_01_name.value;
@@ -140,7 +144,9 @@ button_save.addEventListener("click", function() {
 });
 
 
-
+button_close.addEventListener("click", function() {
+  window.close();
+});
 button_cancel.addEventListener("click", function() {
   window.close();
 });

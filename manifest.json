@@ -1,14 +1,20 @@
 {
-    "name": "Imprimir Factura",
-    "version": "3.3",
+    "name": "Sicflex Print",
+    "version": "3.4",
     "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
-    "author": "UNOLET (Wilmer Martinez)",
+    "author": "unolet.com",
 
-    "permissions": ["declarativeContent", "storage", "https://*.sicflex.com/*", "https://demo.unolet.com/"],
+    "permissions": [
+        "declarativeContent",
+        "storage",
+        "https://*.sicflex.com/*",
+        "https://demo.unolet.com/",
+        "https://unolet.com/api/genericcounter-add/"
+    ],
 
     "content_scripts": [
         {
-          "matches": ["https://*.sicflex.com/*"], 
+          "matches": ["https://*.sicflex.com/*"],
           "css": ["background.css"],
           "js": ["content.js"]
       }
@@ -47,7 +53,6 @@
         "48": "images/print48.png",
         "128": "images/print128.png"
     },
-
 
     "manifest_version": 2
 }
