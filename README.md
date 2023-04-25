@@ -16,6 +16,13 @@ Un navegador web compatible con extensiones de Chrome.
 
 ## Instalación
 
+1. Desde tu navegador web Chrome, Edge, Brave y cualquier otro derivado del proyecto Chromium.
+2. Instala la extensión desde la Chrome Web Store https://chrome.google.com/webstore/detail/sicflex-print/kfnggelbkfgafmbmomepomdkphpepkco
+3. Sigue los pasos y listo.
+
+
+## Instalación (desarrolladores)
+
 Para instalar la Extensión Sicflex para Impresión de Facturas, sigue estos pasos:
 
 1. Descarga el archivo de la extensión chorome-sicflex-print.zip.
