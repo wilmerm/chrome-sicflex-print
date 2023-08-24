@@ -56,3 +56,11 @@ Si tienes alguna pregunta o comentario sobre la Extensión Sicflex para Impresi�
 
 ## Estado del Proyecto
 Actualmente, la Extensión Sicflex para Impresión de Facturas se encuentra en funcionamiento estable y no se han reportado errores conocidos.
+
+## Contribution 💗
+
+Si encuentra valor en este proyecto y desea mostrar su apoyo, considere hacer una donación a través de PayPal:
+
+[Donar en PayPal](https://paypal.me/martinezwilmer?country.x=DO&locale.x=es_XC)
+
+Tu generosidad nos ayuda a seguir mejorando y manteniendo este proyecto. Agradecemos cada contribución, por pequeña que sea. ¡Gracias por ser parte de nuestra comunidad!
