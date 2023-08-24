@@ -52,7 +52,7 @@ Este proyecto está bajo la Licencia GPL.
 
 ## Contacto
 
-Si tienes alguna pregunta o comentario sobre la Extensión Sicflex para Impresión de Facturas, puedes contactarnos a través de support@unolet.com
+Si tienes alguna pregunta o comentario sobre la Extensión Sicflex para Impresión de Facturas, puedes contactarnos a través de info@wilmermartinez.dev
 
 ## Estado del Proyecto
 Actualmente, la Extensión Sicflex para Impresión de Facturas se encuentra en funcionamiento estable y no se han reportado errores conocidos.
