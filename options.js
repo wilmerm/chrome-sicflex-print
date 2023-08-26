@@ -34,7 +34,7 @@ const button_cancel = document.getElementById("button_cancel");
 
 
 // Datos predeterminados.
-var empresa = {
+const empresa = {
   nombre: "REFRICENTRO RUBIERA SRL",
   direccion: "Av. 27 de Febrero No. 438, Distrito Nacional",
   rnc: "101-82473-5",
@@ -69,6 +69,7 @@ var empresa = {
       }
   }
 }
+
 
 function init(data) {
 

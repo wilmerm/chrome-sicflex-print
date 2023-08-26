@@ -1,58 +1,55 @@
 {
+    "manifest_version": 3,
     "name": "Sicflex Print",
-    "version": "3.4",
-    "description": "Extención para imprimir facturas en Sicflex desde el navegador.",
-    "author": "unolet.com",
-
+    "version": "3.5",
+    "description": "Extensión para imprimir facturas en Sicflex desde el navegador.",
+    "author": "Wilmer Martinez",
     "permissions": [
-        "declarativeContent",
-        "storage",
-        "https://*.sicflex.com/*",
-        "https://demo.unolet.com/",
-        "https://unolet.com/api/genericcounter-add/"
+      "activeTab",
+      "declarativeContent",
+      "storage"
     ],
-
+    "host_permissions": [
+      "https://*.sicflex.com/*"
+    ],
     "content_scripts": [
-        {
-          "matches": ["https://*.sicflex.com/*"],
-          "css": ["background.css"],
-          "js": ["content.js"]
+      {
+        "matches": ["https://*.sicflex.com/*"],
+        "css": ["background.css"],
+        "js": ["content.js"]
       }
     ],
-
     "web_accessible_resources": [
-        "background.css",
-        "print.html",
-        "print.css",
-        "images/*"
+        {
+          "resources": [
+            "background.css",
+            "print.html",
+            "print.css",
+            "images/*"
+          ],
+          "matches": ["https://*.sicflex.com/*"]
+        }
     ],
-
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+      "service_worker": "background.js"
     },
-
     "options_ui": {
-        "page": "options.html",
-        "open_in_tab": true
+      "page": "options.html",
+      "open_in_tab": true
     },
-
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "images/print16.png",
-            "32": "images/print32.png",
-            "48": "images/print48.png",
-            "128": "images/print128.png"
-          }
-    },
-
-    "icons": {
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
         "16": "images/print16.png",
         "32": "images/print32.png",
         "48": "images/print48.png",
         "128": "images/print128.png"
+      }
     },
-
-    "manifest_version": 2
-}
+    "icons": {
+      "16": "images/print16.png",
+      "32": "images/print32.png",
+      "48": "images/print48.png",
+      "128": "images/print128.png"
+    }
+  }
