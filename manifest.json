@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Sicflex Print",
-    "version": "3.5",
+    "version": "3.6",
     "description": "Extensión para imprimir facturas en Sicflex desde el navegador.",
     "author": "Wilmer Martinez",
     "permissions": [

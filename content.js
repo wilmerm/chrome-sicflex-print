@@ -430,7 +430,7 @@ function printPagina(intentos = 0, empresa) {
   if (!get(numero)) {
     return alert("No hay ninguna factura para imprimir.");
   }
-  // Para poder incluir el NCF y el NIF, estos deberán estar mostrandose
+  // Para poder incluir el NCF y el NIF, estos deberán estar mostrándose
   // en la página, de no ser así, intentamos mostrarlo primero.
   if (!get(ncf)) {
     // Este código es propio del sitio donde se ejecutará esta extensión.Al igual que otros más 'openxava'.
@@ -451,7 +451,8 @@ function printPagina(intentos = 0, empresa) {
 
   // Es obligatorio que la factura ya se haya impreso en la impresora fiscal,
   // antes de reeimprimirla por aqui.
-  if (!get(nif)) {
+  // Se excluyen los NCF electrónicos en esta comprobación.
+  if (!get(nif) && !get(ncf).startsWith('E')) {
     if (location.hostname == "demo.sicflex.com") {
       // "Se permitirá imprimir a modo de debug."
     } else {
@@ -534,38 +535,137 @@ function printPagina(intentos = 0, empresa) {
 // Interfaz (controles.)
 // -----------------------------------------------------------------------------
 
-let pathname = window.location.href;
-pathname = pathname.split("/");
-pathname = pathname[pathname.length - 1].toLowerCase();
-//console.log("Creando el botón imprimir...");
-
-// Si nos encontramos en facturación o devolución.
-// InventoryInvoice e InventoryInvoiceReturn
-if (pathname.indexOf("inventoryinvoice") != -1) {
-
-  //console.log("Creando botón imprimir... Condición Ok.");
-
-  let img = document.createElement("img");
-  img.src = chrome.runtime.getURL("images/print128.png");
-  img.className = "btn-img";
-
-  // let span = document.createElement("span");
-  // span.innerHTML = "Imprimir con la extensión <b>Unolet</b>.";
-  // span.className = "btn-text";
-
-  let btn = document.createElement("a");
-  //btn.title = "Imprimir con la extensión.";
-  btn.onclick = onPrint;
-  btn.setAttribute("id", "printPage");
-  btn.className = "btn";
-  //btn.setAttribute("style", "");
-  btn.appendChild(img);
-
-  let body = document.getElementsByTagName("body")[0];
-  let div = document.createElement("div");
-  div.appendChild(btn);
-  //div.appendChild(span);
-  body.appendChild(div);
-
-  //console.log("Botón imprimir creado.");
+showClienteStatusBtn = () => {
+  update();
+  if (cliente_name && get(cliente_name) && !document.getElementById('clienteStatusBtn')) {
+    const parent = document.getElementById('ox_jSicflexWebApp_InventoryInvoice__editor_ccamc___nombre');
+    const clientStatusBtn = document.createElement('a');
+    clientStatusBtn.type = 'button';
+    clientStatusBtn.href = '#';
+    clientStatusBtn.target = '_blank';
+    clientStatusBtn.id = 'clienteStatusBtn'
+    clientStatusBtn.style.marginBottom = '0';
+    clientStatusBtn.style.marginLeft = '12px';
+    clientStatusBtn.style.fontWeight = 'bold';
+    clientStatusBtn.style.padding = '7px';
+    clientStatusBtn.style.backgroundColor = '#ffc10780'
+    clientStatusBtn.innerHTML = ``;
+    clientStatusBtn.className = 'portlet-form-button';
+    parent.appendChild(clientStatusBtn);
+    return clientStatusBtn;
+  }
 }
+
+
+updateClienteStatusBtn = (status, slug) => {
+  update();
+  const clienteName = get(cliente_name);
+  if (cliente_name && clienteName) {
+    let clientStatusBtn = document.getElementById('clienteStatusBtn');
+
+    if (!clientStatusBtn) {
+      clientStatusBtn = showClienteStatusBtn();
+    }
+
+    let text = `<b>${status}</b>`;
+
+    if (status != 'NO ENCONTRADO') {
+      text += ' | Ver información completa'
+      clientStatusBtn.href = `https://www.unolet.com/resources/company/${slug}/`;
+    } else {
+      clientStatusBtn.href = `https://www.unolet.com/resources/company/list/?q=${clienteName}`;
+    }
+
+    clientStatusBtn.innerHTML = text;
+  }
+}
+
+
+checkClienteStatus = () => {
+  update();
+  const clienteName = get(cliente_name);
+
+  if (clienteName) {
+    fetch(`https://www.unolet.com/api/companyprofile-validate/?business_name=${clienteName}`)
+      .then(res => res.json())
+      .then(data => {
+        updateClienteStatusBtn(data.status, data.slug);
+      })
+      .catch(errro => {
+        updateClienteStatusBtn('NO ENCONTRADO', '');
+      })
+  }
+}
+
+
+showClienteSearchBtn = () => {
+
+  if (cliente_name && get(cliente_name)) {
+    if (!document.getElementById('clientSearchBtn')) {
+      const body = document.getElementsByTagName("body")[0];
+      const img = document.createElement("img");
+      img.src = chrome.runtime.getURL("images/person.png");
+      img.className = "btn-img";
+
+      const btn = document.createElement('a');
+      btn.className = 'btn';
+      btn.href = "#";
+      btn.setAttribute("id", "clientSearchBtn");
+      btn.style.marginRight = '60px';
+      btn.title = 'Validar información del cliente.';
+      btn.onclick = checkClienteStatus;
+      btn.appendChild(img);
+      body.appendChild(btn)
+    }
+  } else if (document.getElementById('clientSearchBtn')) {
+    document.getElementById('clientSearchBtn').remove();
+  }
+}
+
+
+showCtrls = () => {
+  update();
+  let pathname = window.location.href;
+  pathname = pathname.split("/");
+  pathname = pathname[pathname.length - 1].toLowerCase();
+  //console.log("Creando el botón imprimir...");
+
+  // Si nos encontramos en facturación o devolución.
+  // InventoryInvoice e InventoryInvoiceReturn
+  if (pathname.indexOf("inventoryinvoice") != -1) {
+
+    //console.log("Creando botón imprimir... Condición Ok.");
+
+    const img = document.createElement("img");
+    img.src = chrome.runtime.getURL("images/print128.png");
+    img.className = "btn-img";
+
+    // let span = document.createElement("span");
+    // span.innerHTML = "Imprimir con la extensión <b>Unolet</b>.";
+    // span.className = "btn-text";
+
+    const btn = document.createElement("a");
+    //btn.title = "Imprimir con la extensión.";
+    btn.onclick = onPrint;
+    btn.setAttribute("id", "printPage");
+    btn.className = "btn";
+    //btn.setAttribute("style", "");
+    btn.appendChild(img);
+
+    const body = document.getElementsByTagName("body")[0];
+    const div = document.createElement("div");
+    div.appendChild(btn);
+    //div.appendChild(span);
+
+    //console.log("Botón imprimir creado.");
+
+    body.appendChild(div);
+  }
+}
+
+setTimeout(() => {showCtrls()}, 2000);
+
+// FIXME: Uso en la siguiente versión.
+// setInterval(() => {
+//   showClienteSearchBtn()
+// }, 1000);
